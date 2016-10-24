@@ -33,15 +33,15 @@ class ZHNewsDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.addSubview(self.webView)
-        self.webView.snp_makeConstraints { (make) in
+        self.webView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         
         print("point height = ", imageHeight)
-        self.imageView.frame = CGRectMake(0, 0, 640, imageHeight*2)
-        self.imageView.image = UIImage.imageWithColor(UIColor.redColor())
-        self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
-        self.webView.scrollView.addParallaxWithView(imageView, andHeight: imageHeight);
+        self.imageView.frame = CGRect(x: 0, y: 0, width: 640, height: imageHeight*2)
+        self.imageView.image = UIImage.imageWithColor(UIColor.red)
+        self.imageView.contentMode = UIViewContentMode.scaleAspectFill
+        self.webView.scrollView.addParallax(with: imageView, andHeight: imageHeight);
         
         loadNewData()
     }
@@ -53,11 +53,13 @@ class ZHNewsDetailViewController: UIViewController {
     // MARK: - private method
     func loadNewData() {
         let newsId = self.newsInfo["id"] as! NSNumber
-        Alamofire.request(.GET, String.init(format: ZHConstants.ZHIHU_NEWS_DETAILS, newsId)).responseJSON { response in
-            let cssArray = response.result.value?.objectForKey("css") as! NSArray
+        let url = String.init(format: ZHConstants.ZHIHU_NEWS_DETAILS, newsId)
+        Alamofire.request(url).responseJSON { response in
+            let JSON = response.result.value as! NSDictionary
+            let cssArray = JSON.object(forKey: "css") as! NSArray
             let css = cssArray[0] as! String
             let head = "<head><link rel=\"stylesheet\" type=\"text/css\" href=\"\(css)\"></head>"
-            let body = response.result.value?.objectForKey("body") as! String
+            let body = JSON.object(forKey: "body") as! String
             let html = "\(head)\(body)"
             self.webView.loadHTMLString(html, baseURL: nil)
         }

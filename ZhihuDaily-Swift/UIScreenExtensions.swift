@@ -16,7 +16,7 @@ extension UIScreen {
      - returns: scale
      */
     public class func screenScale() -> CGFloat {
-        return UIScreen.mainScreen().scale;
+        return UIScreen.main.scale;
     }
     
 }

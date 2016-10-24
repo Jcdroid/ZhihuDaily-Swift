@@ -18,7 +18,7 @@ class JCCGUtilities: NSObject {
      
      - returns: pixel
      */
-    class func CGFloatToPixel(value: CGFloat) -> CGFloat {
+    class func CGFloatToPixel(_ value: CGFloat) -> CGFloat {
         return value * UIScreen.screenScale()
     }
     
@@ -29,7 +29,7 @@ class JCCGUtilities: NSObject {
      
      - returns: point
      */
-    class func CGFloatFromPixel(value: CGFloat) -> CGFloat {
+    class func CGFloatFromPixel(_ value: CGFloat) -> CGFloat {
         return value / UIScreen.screenScale()
     }
     

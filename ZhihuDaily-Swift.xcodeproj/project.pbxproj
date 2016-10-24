@@ -18,7 +18,6 @@
 		4F2391E21CFD2C2600C682E5 /* ZHNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2391E11CFD2C2600C682E5 /* ZHNewsDetailViewController.swift */; };
 		4F27C1FC1CD8580900C258F2 /* ZHNewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F27C1FB1CD8580900C258F2 /* ZHNewsListViewController.swift */; };
 		4F5E31571CD84295002B3DC9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5E314E1CD84295002B3DC9 /* Alamofire.framework */; };
-		4F5E31581CD84295002B3DC9 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5E314F1CD84295002B3DC9 /* DZNEmptyDataSet.framework */; };
 		4F5E31591CD84295002B3DC9 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5E31501CD84295002B3DC9 /* IQKeyboardManagerSwift.framework */; };
 		4F5E315A1CD84295002B3DC9 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5E31511CD84295002B3DC9 /* Kingfisher.framework */; };
 		4F5E315E1CD84295002B3DC9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5E31551CD84295002B3DC9 /* RxSwift.framework */; };
@@ -95,7 +94,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F5E31571CD84295002B3DC9 /* Alamofire.framework in Frameworks */,
-				4F5E31581CD84295002B3DC9 /* DZNEmptyDataSet.framework in Frameworks */,
 				4F5E31591CD84295002B3DC9 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				4F5E315A1CD84295002B3DC9 /* Kingfisher.framework in Frameworks */,
 				4F5E315E1CD84295002B3DC9 /* RxSwift.framework in Frameworks */,
@@ -328,13 +326,17 @@
 				TargetAttributes = {
 					0429F1FE1C477D9200114053 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = JLJW949Z96;
+						LastSwiftMigration = 0800;
 					};
 					0429F2121C477D9400114053 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 0429F1FE1C477D9200114053;
 					};
 					0429F21D1C477D9400114053 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 0429F1FE1C477D9200114053;
 					};
 				};
@@ -627,12 +629,14 @@
 			baseConfigurationReference = 09D7C086B03B17F1AAB267A9 /* Pods-ZhihuDaily-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JLJW949Z96;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "ZhihuDaily-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcdroid.ZhihuDaily-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZhihuDaily-Swift/ZhihuDaily-Swift-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -641,12 +645,14 @@
 			baseConfigurationReference = EF278DAD32DB9584A17797BD /* Pods-ZhihuDaily-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JLJW949Z96;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "ZhihuDaily-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcdroid.ZhihuDaily-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZhihuDaily-Swift/ZhihuDaily-Swift-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -659,6 +665,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcdroid.ZhihuDaily-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZhihuDaily-Swift.app/ZhihuDaily-Swift";
 			};
 			name = Debug;
@@ -672,6 +679,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcdroid.ZhihuDaily-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZhihuDaily-Swift.app/ZhihuDaily-Swift";
 			};
 			name = Release;
@@ -683,6 +691,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcdroid.ZhihuDaily-SwiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "ZhihuDaily-Swift";
 				USES_XCTRUNNER = YES;
 			};
@@ -695,6 +704,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcdroid.ZhihuDaily-SwiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "ZhihuDaily-Swift";
 				USES_XCTRUNNER = YES;
 			};

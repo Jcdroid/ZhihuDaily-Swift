@@ -22,16 +22,16 @@ class ZHNewListCell: UITableViewCell {
         
         self.titleLabel.numberOfLines = 0
         
-        self.imgView.snp_makeConstraints(closure: { (make) in
+        self.imgView.snp.makeConstraints({ (make) in
             make.left.top.equalTo(self.contentView).offset(ZHConstants.kPadding8)
             make.bottom.equalTo(self.contentView).offset(-ZHConstants.kPadding8)
-            make.width.equalTo(self.imgView.snp_height)
+            make.width.equalTo(self.imgView.snp.height)
         })
-        self.titleLabel.snp_makeConstraints(closure: { (make) in
-            make.top.equalTo(self.imgView.snp_top)
-            make.left.equalTo(self.imgView.snp_right).offset(ZHConstants.kPadding8)
+        self.titleLabel.snp.makeConstraints({ (make) in
+            make.top.equalTo(self.imgView.snp.top)
+            make.left.equalTo(self.imgView.snp.right).offset(ZHConstants.kPadding8)
             make.right.equalTo(self.contentView).offset(-ZHConstants.kPadding8)
-            make.bottom.equalTo(self.contentView).priorityLow()
+            make.bottom.equalTo(self.contentView).priority(250)
         })
     }
     
@@ -44,17 +44,17 @@ class ZHNewListCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
     // MARK: - public method
-    internal func configNewInfo(newInfo: NSDictionary) {
+    internal func configNewInfo(_ newInfo: NSDictionary) {
         let images: NSArray = newInfo["images"] as! NSArray
-        self.imgView.kf_setImageWithURL(NSURL(string: images[0] as! String)!)
-        self.titleLabel.text = newInfo.objectForKey("title") as? String
+        self.imgView.kf.setImage(with: URL(string: images[0] as! String)!)
+        self.titleLabel.text = newInfo.object(forKey: "title") as? String
     }
 
 }
