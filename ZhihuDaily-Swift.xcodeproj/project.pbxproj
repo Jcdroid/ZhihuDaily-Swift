@@ -321,7 +321,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ZH;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Jcdroid;
 				TargetAttributes = {
 					0429F1FE1C477D9200114053 = {
@@ -554,8 +554,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -599,8 +601,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -619,6 +623,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -628,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 09D7C086B03B17F1AAB267A9 /* Pods-ZhihuDaily-Swift.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JLJW949Z96;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -644,6 +650,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF278DAD32DB9584A17797BD /* Pods-ZhihuDaily-Swift.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JLJW949Z96;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -658,7 +665,6 @@
 		};
 		0429F22B1C477D9400114053 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0371A988BA32A4EE488E576 /* Pods-ZhihuDaily-SwiftTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "ZhihuDaily-SwiftTests/Info.plist";
@@ -672,7 +678,6 @@
 		};
 		0429F22C1C477D9400114053 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B47C0BB175E8F67770868BCB /* Pods-ZhihuDaily-SwiftTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "ZhihuDaily-SwiftTests/Info.plist";

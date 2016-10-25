@@ -47,6 +47,7 @@ class ZHStartViewController: UIViewController {
             make.center.equalTo(self.view)
             make.height.equalTo(44.0)
         }
+        button.isHidden = true
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
             UIView.animate(withDuration: 1, animations: {
@@ -73,8 +74,8 @@ class ZHStartViewController: UIViewController {
         let url = ZHConstants.ZHIHU_START_IMAGE
         Alamofire.request(url).responseJSON { response in
             let JSON = response.result.value as! NSDictionary
-            let imgUrl = JSON.object(forKey: "img") as! String;
-            let resource = ImageResource.init(downloadURL: URL.init(string: imgUrl)!)
+            let img = JSON.object(forKey: "img") as! String;
+            let resource = ImageResource.init(downloadURL: URL.init(string: img)!)
             self.imageView.kf.setImage(with: resource)
         }
     }

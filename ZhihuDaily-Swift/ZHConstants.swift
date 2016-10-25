@@ -8,26 +8,32 @@
 
 class ZHConstants {
     // MARK: - API
-    static let ZHIHU_START_IMAGE = "http://news-at.zhihu.com/api/4/start-image/480*728";
-    static let ZHIHU_LASTEST_NEWS = "http://news-at.zhihu.com/api/4/news/latest";
-    static let ZHIHU_NEWS_DETAILS = "http://news-at.zhihu.com/api/4/news/%@";
+    static let ZHIHU_START_IMAGE: String = "http://news-at.zhihu.com/api/4/start-image/480*728";
+    static let ZHIHU_LASTEST_NEWS: String = "http://news-at.zhihu.com/api/4/news/latest";
+    static let ZHIHU_NEWS_DETAILS: String = "http://news-at.zhihu.com/api/4/news/%@";
+    
+    // MARK: - phone
+    static let kTabBarHeight: CGFloat = 49.0
+    static let kStatusBarHeight: CGFloat = 20.0
+    static let kNavigationBarHeight: CGFloat = 44.0
+    static let kSegmentControlHeight: CGFloat = 44.0
     
     // MARK: - Common const
-    static let kCellIdentifier = "cell"
-    static let kCellIdentifier1 = "cell1"
-    static let kCellIdentifier2 = "cell2"
-    static let kCellIdentifier3 = "cell3"
-    static let kCellIdentifier4 = "cell4"
-    static let kCellIdentifier5 = "cell5"
-    static let kCellIdentifier6 = "cell6"
+    static let kCellIdentifier: String = "cell"
+    static let kCellIdentifier1: String = "cell1"
+    static let kCellIdentifier2: String = "cell2"
+    static let kCellIdentifier3: String = "cell3"
+    static let kCellIdentifier4: String = "cell4"
+    static let kCellIdentifier5: String = "cell5"
+    static let kCellIdentifier6: String = "cell6"
     
-    static let kCellHeight44 = 44.0
-    static let kCellHeight66 = 66.0
+    static let kCellHeight44: CGFloat = 44.0
+    static let kCellHeight66: CGFloat = 66.0
     
-    static let kPadding2 = 2
-    static let kPadding4 = 4
-    static let kPadding6 = 6
-    static let kPadding8 = 8
-    static let kPadding10 = 10
-    static let kPadding12 = 12
+    static let kPadding2: CGFloat = 2
+    static let kPadding4: CGFloat = 4
+    static let kPadding6: CGFloat = 6
+    static let kPadding8: CGFloat = 8
+    static let kPadding10: CGFloat = 10
+    static let kPadding12: CGFloat = 12
 }
