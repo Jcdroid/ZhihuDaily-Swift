@@ -9,6 +9,6 @@
 #ifndef ZhihuDaily_Swift_Bridging_Header_h
 #define ZhihuDaily_Swift_Bridging_Header_h
 
-#import "UIScrollView+APParallaxHeader.h"
+// import file
 
 #endif /* ZhihuDaily_Swift_Bridging_Header_h */

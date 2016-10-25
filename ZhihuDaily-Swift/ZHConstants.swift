@@ -13,10 +13,10 @@ class ZHConstants {
     static let ZHIHU_NEWS_DETAILS: String = "http://news-at.zhihu.com/api/4/news/%@";
     
     // MARK: - phone
-    static let kTabBarHeight: CGFloat = 49.0
-    static let kStatusBarHeight: CGFloat = 20.0
-    static let kNavigationBarHeight: CGFloat = 44.0
-    static let kSegmentControlHeight: CGFloat = 44.0
+    static let kTabBarHeight: Float = 49.0
+    static let kStatusBarHeight: Float = 20.0
+    static let kNavigationBarHeight: Float = 44.0
+    static let kSegmentControlHeight: Float = 44.0
     
     // MARK: - Common const
     static let kCellIdentifier: String = "cell"
@@ -27,13 +27,13 @@ class ZHConstants {
     static let kCellIdentifier5: String = "cell5"
     static let kCellIdentifier6: String = "cell6"
     
-    static let kCellHeight44: CGFloat = 44.0
-    static let kCellHeight66: CGFloat = 66.0
+    static let kCellHeight44: Float = 44.0
+    static let kCellHeight66: Float = 66.0
     
-    static let kPadding2: CGFloat = 2
-    static let kPadding4: CGFloat = 4
-    static let kPadding6: CGFloat = 6
-    static let kPadding8: CGFloat = 8
-    static let kPadding10: CGFloat = 10
-    static let kPadding12: CGFloat = 12
+    static let kPadding2: Float = 2
+    static let kPadding4: Float = 4
+    static let kPadding6: Float = 6
+    static let kPadding8: Float = 8
+    static let kPadding10: Float = 10
+    static let kPadding12: Float = 12
 }

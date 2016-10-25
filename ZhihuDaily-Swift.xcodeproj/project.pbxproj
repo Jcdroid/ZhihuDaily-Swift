@@ -25,7 +25,6 @@
 		4FFAAF681D0025C800ECDC83 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFAAF671D0025C800ECDC83 /* UIImageExtensions.swift */; };
 		4FFCDAE21D000DF100F0465E /* UIScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFCDAE11D000DF100F0465E /* UIScreenExtensions.swift */; };
 		4FFCDAE41D0010B500F0465E /* JCCGUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFCDAE31D0010B500F0465E /* JCCGUtilities.swift */; };
-		4FFCDAE81D00171300F0465E /* UIScrollView+APParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFCDAE71D00171300F0465E /* UIScrollView+APParallaxHeader.m */; };
 		54C7A39174B2D6B0605884C6 /* Pods_ZhihuDaily_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A246707AE232BD156201A512 /* Pods_ZhihuDaily_Swift.framework */; };
 		84E39346478411AFF1312A3A /* Pods_ZhihuDaily_SwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F2671127792C973B4F1F50 /* Pods_ZhihuDaily_SwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,8 +77,6 @@
 		4FFAAF671D0025C800ECDC83 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		4FFCDAE11D000DF100F0465E /* UIScreenExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtensions.swift; sourceTree = "<group>"; };
 		4FFCDAE31D0010B500F0465E /* JCCGUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCCGUtilities.swift; sourceTree = "<group>"; };
-		4FFCDAE61D00171300F0465E /* UIScrollView+APParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+APParallaxHeader.h"; sourceTree = "<group>"; };
-		4FFCDAE71D00171300F0465E /* UIScrollView+APParallaxHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+APParallaxHeader.m"; sourceTree = "<group>"; };
 		4FFCDAF11D0017BE00F0465E /* ZhihuDaily-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZhihuDaily-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		A0371A988BA32A4EE488E576 /* Pods-ZhihuDaily-SwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily-SwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily-SwiftTests/Pods-ZhihuDaily-SwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A246707AE232BD156201A512 /* Pods_ZhihuDaily_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhihuDaily_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +144,6 @@
 			children = (
 				0429F2301C477E6700114053 /* ZHConstants.swift */,
 				0429F2021C477D9300114053 /* ZHAppDelegate.swift */,
-				4FFCDAE51D00171300F0465E /* APParallaxHeader */,
 				4F2391DE1CFC55F500C682E5 /* Controller */,
 				4F2391DF1CFC560300C682E5 /* Other */,
 				0429F2091C477D9400114053 /* Assets.xcassets */,
@@ -222,15 +218,6 @@
 				4FFAAF671D0025C800ECDC83 /* UIImageExtensions.swift */,
 			);
 			name = Extension;
-			sourceTree = "<group>";
-		};
-		4FFCDAE51D00171300F0465E /* APParallaxHeader */ = {
-			isa = PBXGroup;
-			children = (
-				4FFCDAE61D00171300F0465E /* UIScrollView+APParallaxHeader.h */,
-				4FFCDAE71D00171300F0465E /* UIScrollView+APParallaxHeader.m */,
-			);
-			path = APParallaxHeader;
 			sourceTree = "<group>";
 		};
 		B884D1FD1CB940832829CBEE /* Frameworks */ = {
@@ -493,7 +480,6 @@
 				4FFCDAE21D000DF100F0465E /* UIScreenExtensions.swift in Sources */,
 				4F2391E21CFD2C2600C682E5 /* ZHNewsDetailViewController.swift in Sources */,
 				4FFAAF681D0025C800ECDC83 /* UIImageExtensions.swift in Sources */,
-				4FFCDAE81D00171300F0465E /* UIScrollView+APParallaxHeader.m in Sources */,
 				4F2391CB1CFB522D00C682E5 /* ZHNewListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
