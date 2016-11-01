@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Alamofire
+import AlamofireObjectMapper
 import Kingfisher
 
 private extension Selector {
@@ -72,11 +73,12 @@ class ZHStartViewController: UIViewController {
     
     func loadNewData() {
         let url = ZHConstants.ZHIHU_START_IMAGE
-        Alamofire.request(url).responseJSON { response in
-            let JSON = response.result.value as! NSDictionary
-            let img = JSON.object(forKey: "img") as! String;
-            let resource = ImageResource.init(downloadURL: URL.init(string: img)!)
-            self.imageView.kf.setImage(with: resource)
+        Alamofire.request(url).responseObject { (response: DataResponse<ZHStartImage>) in
+            let startImage = response.result.value
+            if let img = startImage?.image {
+                let resource = ImageResource.init(downloadURL: URL.init(string: img)!)
+                self.imageView.kf.setImage(with: resource)
+            }
         }
     }
 

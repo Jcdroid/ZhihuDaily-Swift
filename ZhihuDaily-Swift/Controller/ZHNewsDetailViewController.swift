@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireObjectMapper
 import Kingfisher
 
 class ZHNewsDetailViewController: UIViewController, UIScrollViewDelegate {
@@ -18,13 +19,13 @@ class ZHNewsDetailViewController: UIViewController, UIScrollViewDelegate {
     
     let imageHeight: CGFloat = JCCGUtilities.CGFloatFromPixel(200)
     
+    var news: ZHNews
     
-    var newsInfo: NSDictionary
     
-    init(newsInfo: NSDictionary) {
-        self.newsInfo = newsInfo
+    init(news: ZHNews) {
+        self.news = news
         super.init(nibName: nil, bundle: nil)
-        self.title = newsInfo["title"] as? String
+        self.title = news.title
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -95,20 +96,20 @@ class ZHNewsDetailViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - private method
     
     func loadNewData() {
-        let newsId = self.newsInfo["id"] as! NSNumber
-        let url = String.init(format: ZHConstants.ZHIHU_NEWS_DETAILS, newsId)
-        Alamofire.request(url).responseJSON { response in
-            let JSON = response.result.value as! NSDictionary
+        let newsId = self.news.id
+        let url = String.init(format: ZHConstants.ZHIHU_NEWS_DETAILS, newsId!)
+        
+        Alamofire.request(url).responseObject { (response: DataResponse<ZHNewsDetail>) in
+            let newsDetail = response.result.value
             
-            let image = JSON.object(forKey: "image") as! String
-            let resource = ImageResource.init(downloadURL: URL.init(string: image)!)
-            self.imageView.kf.setImage(with: resource)
+            let image = newsDetail?.image
+            self.imageView.kf.setImage(with: URL(string: image!)!)
             
-            let cssArray = JSON.object(forKey: "css") as! NSArray
-            let css = cssArray[0] as! String
+            let cssArray = newsDetail?.css
+            let css = cssArray![0]
             let head = "<head><link rel=\"stylesheet\" type=\"text/css\" href=\"\(css)\"></head>"
-            let body = JSON.object(forKey: "body") as! String
-            let html = "\(head)\(body)"
+            let body = newsDetail?.body
+            let html = "\(head)\(body!)"
             self.webView.loadHTMLString(html, baseURL: nil)
         }
     }

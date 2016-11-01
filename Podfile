@@ -5,6 +5,7 @@ use_frameworks!
 target 'ZhihuDaily-Swift' do
 
 pod 'Alamofire', '~> 4.0.1'
+pod 'AlamofireObjectMapper', '~> 4.0.0'
 pod 'Kingfisher', '~> 3.1.3'
 pod 'SnapKit', '~> 3.0.2'
 pod 'RxSwift', '~> 3.0.0-rc.1'

@@ -51,10 +51,11 @@ class ZHNewListCell: UITableViewCell {
     }
     
     // MARK: - public method
-    internal func configNewInfo(_ newInfo: NSDictionary) {
-        let images: NSArray = newInfo["images"] as! NSArray
-        self.imgView.kf.setImage(with: URL(string: images[0] as! String)!)
-        self.titleLabel.text = newInfo.object(forKey: "title") as? String
+    internal func configNews(_ news: ZHNews) {
+        let images = news.images
+        let image = images?[0] as! String
+        self.imgView.kf.setImage(with: URL(string: image)!)
+        self.titleLabel.text = news.title
     }
 
 }

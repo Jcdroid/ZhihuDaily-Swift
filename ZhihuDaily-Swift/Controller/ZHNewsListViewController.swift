@@ -8,10 +8,11 @@
 
 import UIKit
 import Alamofire
+import AlamofireObjectMapper
 
 class ZHNewsListViewController: UITableViewController {
     
-    var dataSourceArray = NSMutableArray()
+    var dataSourceArray: [ZHNews]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,11 @@ class ZHNewsListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSourceArray.count
+        if let dataSourceArray = self.dataSourceArray {
+            return dataSourceArray.count
+        } else {
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +55,9 @@ class ZHNewsListViewController: UITableViewController {
     
     func configureCell(_ cell: UITableViewCell, forRowAtIndexPath: IndexPath) {
         let newListCell = cell as! ZHNewListCell
-        newListCell.configNewInfo(self.dataSourceArray.object(at: (forRowAtIndexPath as NSIndexPath).row) as! NSDictionary)
+        
+        let news = self.dataSourceArray?[forRowAtIndexPath.row]
+        newListCell.configNews(news!)
     }
     
     //MARK: UITableViewDelegate
@@ -58,9 +65,9 @@ class ZHNewsListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let newsInfo = self.dataSourceArray[(indexPath as NSIndexPath).row] as! NSDictionary
+        let news = self.dataSourceArray?[indexPath.row]
         
-        self.navigationController?.pushViewController(ZHNewsDetailViewController.init(newsInfo: newsInfo), animated: true)
+        self.navigationController?.pushViewController(ZHNewsDetailViewController.init(news: news!), animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,11 +93,13 @@ class ZHNewsListViewController: UITableViewController {
     // MARK: - private method
     func loadNewData() {
         let url = ZHConstants.ZHIHU_LASTEST_NEWS
-        Alamofire.request(url).responseJSON { response in
-            let JSON = response.result.value as! NSDictionary
-            let stories = JSON.object(forKey: "stories")
-            self.dataSourceArray = stories as! NSMutableArray
-            self.tableView.reloadData()
+        Alamofire.request(url).responseObject { (response: DataResponse<ZHNewsList>) in
+            let newsList = response.result.value
+            
+            if let stories = newsList?.stories {
+                self.dataSourceArray = stories
+                self.tableView.reloadData()
+            }
         }
     }
 
