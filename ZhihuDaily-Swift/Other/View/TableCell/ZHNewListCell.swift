@@ -12,15 +12,22 @@ import SnapKit
 
 class ZHNewListCell: UITableViewCell {
     
-    var imgView = UIImageView()
-    var titleLabel = UILabel()
+    var imgView: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
+    var titleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         self.contentView.addSubview(self.imgView)
         self.contentView.addSubview(self.titleLabel)
-        
-        self.titleLabel.numberOfLines = 0
         
         self.imgView.snp.makeConstraints({ (make) in
             make.left.top.equalTo(self.contentView).offset(ZHConstants.kPadding8)

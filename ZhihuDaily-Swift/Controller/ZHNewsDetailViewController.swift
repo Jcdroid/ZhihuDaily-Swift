@@ -13,9 +13,18 @@ import Kingfisher
 
 class ZHNewsDetailViewController: UIViewController, UIScrollViewDelegate {
     
-    let imageView = UIImageView()
+    let webView: UIWebView = {
+        let webView = UIWebView()
+        //webView.backgroundColor = UIColor.clear
+        return webView
+    }()
     
-    let webView = UIWebView()
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
+        //imageView.image = UIImage.imageWithColor(UIColor.red)
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        return imageView
+    }()
     
     let imageHeight: CGFloat = JCCGUtilities.CGFloatFromPixel(200)
     
@@ -37,15 +46,12 @@ class ZHNewsDetailViewController: UIViewController, UIScrollViewDelegate {
         
         self.automaticallyAdjustsScrollViewInsets = false // 解决UIScrollView属性contentOffset.y初始为-20的问题，设置后初始值为0
         
-        //self.webView.backgroundColor = UIColor.clear
         self.webView.scrollView.delegate = self;
         self.view.addSubview(self.webView)
         self.webView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         
-        //self.imageView.image = UIImage.imageWithColor(UIColor.red)
-        self.imageView.contentMode = UIViewContentMode.scaleAspectFill
         self.view.addSubview(self.imageView)
         self.imageView.snp.makeConstraints { (make) in
             make.left.top.right.equalTo(self.view)

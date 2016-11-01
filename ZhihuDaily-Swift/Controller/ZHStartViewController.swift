@@ -26,7 +26,15 @@ class ZHStartViewController: UIViewController {
     }
     
     lazy var imageView = UIImageView()
-    lazy var button = UIButton()
+    lazy var button: UIButton = {
+        let button = UIButton()
+        button.setTitle("News List", for: UIControlState())
+        // button.addTarget(self, action: #selector(self.clickButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        // button.addTarget(self, action: Action.clickButton, forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: .clickButton, for: .touchUpInside)
+        button.isHidden = true
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,22 +42,16 @@ class ZHStartViewController: UIViewController {
         loadNewData()
         
         self.view.addSubview(imageView)
+        self.view.addSubview(button)
         imageView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view).inset(UIEdgeInsets.zero)
         }
-        imageView.kf.setImage(with: URL(string: "https://pic2.zhimg.com/5578a7ef3511657cee1555be513a15d5.jpg")!)
-        
-        self.view.addSubview(button)
-        button.setTitle("News List", for: UIControlState())
-        // button.addTarget(self, action: #selector(self.clickButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        // button.addTarget(self, action: Action.clickButton, forControlEvents: .TouchUpInside)
-        button.addTarget(self, action: .clickButton, for: .touchUpInside)
         button.snp.makeConstraints { (make) in
             make.center.equalTo(self.view)
             make.height.equalTo(44.0)
         }
-        button.isHidden = true
         
+        imageView.kf.setImage(with: URL(string: "https://pic2.zhimg.com/5578a7ef3511657cee1555be513a15d5.jpg")!)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
             UIView.animate(withDuration: 1, animations: {
                 self.view.alpha = 0.0
