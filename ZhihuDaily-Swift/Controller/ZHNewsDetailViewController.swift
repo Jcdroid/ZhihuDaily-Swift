@@ -16,6 +16,7 @@ class ZHNewsDetailViewController: UIViewController, UIScrollViewDelegate {
     let webView: UIWebView = {
         let webView = UIWebView()
         //webView.backgroundColor = UIColor.clear
+        webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal
         return webView
     }()
     

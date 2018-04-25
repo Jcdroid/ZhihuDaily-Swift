@@ -12,6 +12,8 @@ import AlamofireObjectMapper
 
 class ZHNewsListViewController: UITableViewController {
     
+    var settingButtonItem = UIBarButtonItem()
+    
     var dataSourceArray: [ZHNews]?
 
     override func viewDidLoad() {
@@ -20,7 +22,9 @@ class ZHNewsListViewController: UITableViewController {
         self.title = "知乎日报"
 
         self.clearsSelectionOnViewWillAppear = true
-
+        
+        let settingButtonItem1 = UIBarButtonItem.init(title: "设置", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.clickItem(_:)))
+        self.navigationItem.leftBarButtonItem = settingButtonItem1
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.tableView.register(ZHNewListCell.self, forCellReuseIdentifier: ZHConstants.kCellIdentifier)
@@ -31,6 +35,10 @@ class ZHNewsListViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func clickItem(_ sender: UIBarButtonItem) {
+        self.navigationController?.pushViewController(ZHSettingViewController(), animated: true)
     }
 
     //MARK: UITableViewDataSource
